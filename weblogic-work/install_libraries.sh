@@ -13,6 +13,7 @@ then
   echo "$0 recieved an argument, using $1 for the module directory."
 else
   MODULES_DIR="/opt/Oracle/Middleware/modules/"
+  #TODO: Should look for WL_HOME
   LIBRARY_DIR="/opt/Oracle/Middleware/wlserver_10.3/server/lib/"
   echo "No modules directory passed in, using default resolution"
 fi
@@ -69,8 +70,13 @@ for LIBRARY in ${WEBLOGIC_LIBRARIES}
 do
 FILE_PATTERN=`echo $LIBRARY | sed -e 's/{vers}/*/g'`
 FILE=`find $LIBRARY_DIR -name $FILE_PATTERN`
-FILES="$FILES
+if ! [ "" = "$FILE" ];
+then
+FILES="$FILES 
 $FILE"
+else
+echo "File was not found (pattern: $FILE_PATTERN)"
+fi
 
 done
 
