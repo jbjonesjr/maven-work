@@ -42,6 +42,7 @@ com.bea.core.descriptor_{vers}.jar \
 com.bea.core.timers_{vers}.jar \
 com.bea.core.weblogic.socket.api_{vers}.jar \
 com.bea.core.common.security.api_{vers}.jar \
+com.bea.core.common.security.utils_{vers}.jar \
 com.bea.core.weblogic.security.digest_{vers}.jar \
 com.bea.core.weblogic.lifecycle_{vers}.jar \
 com.bea.core.workarea_{vers}.jar \
